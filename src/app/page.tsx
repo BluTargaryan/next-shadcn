@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { sendGAEvent } from "@next/third-parties/google"
 
 
 type Game  = {
@@ -27,7 +28,8 @@ export default async function Home() {
     <main className="m-24 rounded-md grid-cols-4 gap-12">
 {
   games.map((game)=>(
-    <div className="col-span-4 md:col-span-2" key={game.id}>
+    <div className="col-span-4 md:col-span-2" key={game.id}
+    onClick={() => sendGAEvent({ event: 'itemClicked', value: `${game.name}` })}>
       <h1>{game.name}</h1>
       <p className="font-bold text-sm mb-4">{game.rating}</p>
       <div className="aspect-video relative">
