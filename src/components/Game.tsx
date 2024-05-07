@@ -11,7 +11,7 @@ type Game  = {
 
 export default function Game ({id, name, rating, image}:Game){
     return(
-        <div className="col-span-4 md:col-span-2" key={id}
+        <div className="col-span-4 md:col-span-2" 
         onClick={() => sendGAEvent({ event: 'itemClicked', value: `${name}` })}>
           <h1>{name}</h1>
           <p className="font-bold text-sm mb-4">{rating}</p>

@@ -27,6 +27,7 @@ export default async function Home() {
 {
   games.map((game)=>(
    <Game
+   key={game.id}
    id={game.id}
    name={game.name}
    rating={game.rating}
